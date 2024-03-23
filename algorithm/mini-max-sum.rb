@@ -44,3 +44,25 @@ arr = input_array
 
 min_sum, max_sum = mini_max_sum(arr)
 puts "#{min_sum} #{max_sum}"
+puts "------------------------------------------"
+def calculate_sums(numbers)
+    # Chuyển đổi dãy số thành mảng các chuỗi
+    numbers_array = numbers.map(&:to_s)
+
+    sums = []
+
+    numbers.each_with_index do |num, index|
+        # Tính tổng của các số trong dãy trừ đi số hiện tại
+        sum = numbers.sum - num
+        sums << sum
+    end
+
+    return sums
+end
+
+result = calculate_sums(arr)
+
+# In ra kết quả
+result.each_with_index do |sum, index|
+    puts "If we sum everything except #{arr.map(&:to_s)[index]}, our sum is: #{sum}"
+end
