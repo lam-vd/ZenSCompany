@@ -1,24 +1,36 @@
-# README
+<!-- ABOUT THE PROJECT -->
+## I. About The Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Order System:
 
-Things you may want to cover:
+### Built With
 
-* Ruby version
+* [Ruby 3.2.2](https://github.com/ruby/ruby)
+* [Rails 7.0.8.1](https://github.com/rails/rails)
+* [Mysql](https://www.postgresql.org/)
+* [Yarn](https://yarnpkg.com/)
+* [jQuery](https://jquery.com/)
+* [Bootstrap](https://getbootstrap.com/)
 
-* System dependencies
+!-- INSTALLATION -->
+## II. Installation
 
-* Configuration
+### 1. Set up local configurations
 
-* Database creation
+```
+cp config/database.yml.example config/database.yml
+```
 
-* Database initialization
+### 2. Install Bootstrap and esbuild (if have not)
 
-* How to run the test suite
+```
+rails javascript:install:esbuild
+rails css:install:bootstrap
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+<!-- CONTACT -->
+## III. Contact
 
-* Deployment instructions
+Lam Vu - [@Lamvd](https://github.com/lam-vd)
 
-* ...
+Project Link: [Stories Joke](https://github.com/lam-vd/ZenSCompany)
