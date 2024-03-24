@@ -12,8 +12,9 @@
 
 ActiveRecord::Schema[7.0].define(version: 2024_03_23_024223) do
   create_table "jokes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "title"
     t.text "content"
+    t.integer "likes", default: 0
+    t.integer "dislikes", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

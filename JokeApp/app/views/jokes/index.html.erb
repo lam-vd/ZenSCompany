@@ -10,7 +10,7 @@
     <div class="col-xl-7 col-lg-8 p-5">
       <div class="section-title text-left">
         <p style="letter-spacing: 0.5px;">
-          A child asked his father, "How were people born?" So his father said, "Adam and Eve made babies, then their babies became adults and made babies, and so on."The child then went to his mother, asked her the same question and she told him, "We were monkeys then we evolved to become like we are now." The child ran back to his father and said, "You lied to me!" His father replied, "No, your mom was talking about her side of the family."
+          <%= render 'joke' %>
         </p>
       </div>
     </div>
@@ -20,12 +20,12 @@
 <div class="container-fluid d-flex justify-content-center text-center" style="padding: 5%;">
   <button class="btn btn-primary mx-3 flex-grow-1 w-100" style="border-radius: 0; max-width: 200px;">
     <div class="align-items-center">
-      This is funny!
+      <%= link_to "This is funny!", like_joke_path(@joke), data: { 'turbo-method' => :post }, remote: true, class: "text-decoration-none text-white" %>
     </div>
   </button>
   <button class="btn btn-success mx-3 flex-grow-1 w-100" style="border-radius: 0; max-width: 200px;">
     <div class="align-items-center">
-      This is not funny.
+      <%= link_to "This is not funny.", dislike_joke_path(@joke), data: { 'turbo-method' => :post }, remote: true, class: "text-decoration-none text-white" %>
     </div>
   </button>
 </div>
