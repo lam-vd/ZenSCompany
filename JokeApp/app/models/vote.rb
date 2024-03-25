@@ -5,5 +5,5 @@ class Vote < ApplicationRecord
   enum vote_type: {
     like: 0,
     dislike: 1,
-  }, _default: :like
+  }
 end
