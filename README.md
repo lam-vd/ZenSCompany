@@ -39,11 +39,11 @@ rails db:drop db:create db:migrate db:seed
 
 ### 1. PC
 
-<img src="images/pc-web.png" alt="Jokeindex" width="250">
+<img src="JokeApp/app/images/pc-web.png" alt="Jokeindex" width="250">
 
 ### 2. Mobile
 
-<img src="images/mobile.png" alt="Jokeindex" width="250">
+<img src="JokeApp/app/images/mobile.png" alt="Jokeindex" width="250">
 
 <!-- CONTACT -->
 ## iV. Contact
