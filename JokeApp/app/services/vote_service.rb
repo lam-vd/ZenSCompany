@@ -8,12 +8,9 @@ class VoteService
         guest_user
     end
 
-    private
-    
-    def self.create_guest_user
+    def create_guest_user
         guest_email = "guest_#{SecureRandom.hex(4)}@gmail.com"
         guest_user = User.new(email: guest_email, password: Devise.friendly_token[0, 10])
         guest_user.save ? guest_user : nil
     end
-    
 end
