@@ -12,10 +12,10 @@ class VotesController < ApplicationController
     def guest_user
         guest_user_id = cookies[:guest_user_id]
         if guest_user_id.present?
-            User.find_or_create_by(id: guest_user_id)
+            User.find_or_create_by(cookies_user_id: guest_user_id)
         else
             guest_user = create_guest_user
-            cookies[:guest_user_id] = { value: guest_user.id, expires: 1.days.from_now }
+            cookies[:guest_user_id] = { value: guest_user.cookies_user_id, expires: 1.days.from_now }
             guest_user
         end
     end

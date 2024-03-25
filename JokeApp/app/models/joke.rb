@@ -1,6 +1,9 @@
 class Joke < ApplicationRecord
     has_many :votes
     has_many :users, through: :votes
+
+    validates :content, presence: true
+
     scope :random_order, -> { order(Arel.sql("RAND()")).first }
     scope :not_voted_by_user, ->(user) { where.not(id: user.votes.map(&:joke).pluck(:id)) }
 

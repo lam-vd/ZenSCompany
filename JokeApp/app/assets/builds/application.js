@@ -13398,14 +13398,6 @@ application.register("hello", hello_controller_default);
 var bootstrap = __toESM(require_bootstrap());
 
 // app/javascript/custom/main.js
-document.addEventListener("turbo:load", function() {
-  var alertFrame = document.getElementById("alert-message");
-  if (alertFrame) {
-    setTimeout(function() {
-      alertFrame.style.display = "none";
-    }, 5e3);
-  }
-});
 var CookieBar = class {
   constructor() {
     this.cookiesBar = document.getElementById("cookies-bar");

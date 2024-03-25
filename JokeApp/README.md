@@ -1,13 +1,13 @@
 <!-- ABOUT THE PROJECT -->
 ## I. About The Project
 
-Order System:
+Joke App:
 
 ### Built With
 
 * [Ruby 3.2.2](https://github.com/ruby/ruby)
 * [Rails 7.0.8.1](https://github.com/rails/rails)
-* [Mysql](https://www.postgresql.org/)
+* [Mysql](https://www.mysql.com/)
 * [Yarn](https://yarnpkg.com/)
 * [jQuery](https://jquery.com/)
 * [Bootstrap](https://getbootstrap.com/)
@@ -21,11 +21,12 @@ Order System:
 cp config/database.yml.example config/database.yml
 ```
 
-### 2. Install Bootstrap and esbuild (if have not)
+### 2. Install Bootstrap/esbuild and Faker DB
 
 ```
 rails javascript:install:esbuild
 rails css:install:bootstrap
+rails db:drop db:create db:migrate db:seed
 ```
 
 <!-- CONTACT -->
