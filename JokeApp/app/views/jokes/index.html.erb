@@ -18,14 +18,26 @@
 </div>
 <hr class="mx-auto d-none d-sm-block" style="width: 40%;">
 <div class="container-fluid d-flex justify-content-center text-center" style="padding: 5%;">
-  <button class="btn btn-primary mx-3 flex-grow-1 w-100" style="border-radius: 0; max-width: 200px;">
-    <div class="align-items-center">
-      <%= link_to "This is funny!", like_joke_path(@joke), data: { 'turbo-method' => :post }, remote: true, class: "text-decoration-none text-white" %>
-    </div>
-  </button>
-  <button class="btn btn-success mx-3 flex-grow-1 w-100" style="border-radius: 0; max-width: 200px;">
-    <div class="align-items-center">
-      <%= link_to "This is not funny.", dislike_joke_path(@joke), data: { 'turbo-method' => :post }, remote: true, class: "text-decoration-none text-white" %>
-    </div>
-  </button>
+<button class="btn btn-primary mx-3 flex-grow-1 w-100" style="border-radius: 0; max-width: 200px;">
+  <div class="align-items-center">
+    <%= form_with url: votes_path, method: :post do |form| %>
+      <% if @joke.present? %>
+        <%= form.hidden_field :joke_id, value: @joke.id %>
+        <%= form.hidden_field :vote_type, value: 'like' %>
+      <% end %>
+      <%= form.submit "This is funny!", class: "btn btn-primary ms-2 flex-grow-1 w-100", style: "border-radius: 0;" %>
+    <% end %>
+  </div>
+</button>
+<button class="btn btn-success mx-3 flex-grow-1 w-100" style="border-radius: 0; max-width: 200px;">
+  <div class="align-items-center">
+    <%= form_with url: votes_path, method: :post do |form| %>
+      <% if @joke.present? %>
+        <%= form.hidden_field :joke_id, value: @joke.id %>
+        <%= form.hidden_field :vote_type, value: 'dislike' %>
+      <% end %>
+      <%= form.submit "This is not funny.", class: "btn btn-success ms-2 flex-grow-1 w-100", style: "border-radius: 0;"%>
+    <% end %>
+  </div>
+</button>
 </div>

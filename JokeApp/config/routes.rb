@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
   root "jokes#index"
-  resources :jokes, only: [:index, :show] do
-    member do
-      post 'like', to: 'jokes#like', as: :like
-      post 'dislike', to: 'jokes#dislike', as: :dislike
-    end
-  end
+  resources :jokes, only: [:index]
+  resources :votes, only: [:create]
 end

@@ -1,1 +1,7 @@
-<p><%= @joke.content %></p>
+<% if @joke.present? %>
+  <p><%= @joke.content %></p>
+<% else %>
+<div class="text-center">
+  <p>"That's all the jokes for today! Come back another day!"</p>
+</div>
+<% end %>

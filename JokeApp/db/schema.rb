@@ -10,13 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_23_024223) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_24_152038) do
   create_table "jokes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "content"
-    t.integer "likes", default: 0
-    t.integer "dislikes", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "votes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "joke_id", null: false
+    t.integer "vote_type", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["joke_id"], name: "index_votes_on_joke_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
+  end
+
+  add_foreign_key "votes", "jokes"
+  add_foreign_key "votes", "users"
 end
