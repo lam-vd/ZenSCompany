@@ -11,6 +11,12 @@ module JokeApp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+
+    # Auto-load the bot and its subdirectories
+    config.enable_dependency_loading = true
+    config.autoload_paths += %W(
+      #{config.root}/app/services
+    )
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
