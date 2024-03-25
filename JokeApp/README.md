@@ -28,9 +28,19 @@ rails javascript:install:esbuild
 rails css:install:bootstrap
 rails db:drop db:create db:migrate db:seed
 ```
+<!-- SCREENSHOTS -->
+## III. Screenshots FontEnd
+
+### 1. PC
+
+<img src="images/pc-web.png" alt="Jokeindex" width="250">
+
+### 2. Mobile
+
+<img src="images/mobile.png" alt="Jokeindex" width="250">
 
 <!-- CONTACT -->
-## III. Contact
+## iV. Contact
 
 Lam Vu - [@Lamvd](https://github.com/lam-vd)
 
